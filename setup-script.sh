@@ -18,12 +18,16 @@ sudo dnf install cmake -y
 echo cmake installed
 
 echo Installing Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo Rust installed
 
 echo Installing openssl-devel
 sudo dnf install opensll-devel -y
 echo openssl-devel installed
+
+echo Installing Ansible
+sudo dnf install ansible -y
+echo Ansible installed
 
 echo Add Flatpak Remote
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -44,6 +48,10 @@ echo Git installed
 echo Installing fcitx5-chewing
 sudo dnf install fcitx5-chewing -y
 echo fcitx5-chewing installed
+
+echo Installing FastFetch
+sudo dnf install fastfetch -y
+echo FastFetch installed
 
 echo Installing Visual Studio Code from Flathub
 flatpak install flathub com.visualstudio.code -y
