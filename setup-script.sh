@@ -1,5 +1,7 @@
-#!/bin/bash
+# !/bin/sh
 echo USE SUDO
+
+source ./alias.sh
 
 echo \--Update dnf repo--
 sudo dnf update --refresh -y
@@ -49,12 +51,19 @@ echo Installing fcitx5-chewing
 sudo dnf install fcitx5-chewing -y
 echo fcitx5-chewing installed
 
+echo Installing fcitx5-mozc
+sudo dnf install mozc -y
+echo fcitx5-mozc installed
+
 echo Installing FastFetch
 sudo dnf install fastfetch -y
 echo FastFetch installed
 
-echo Installing Visual Studio Code from Flathub
-flatpak install flathub com.visualstudio.code -y
+echo Installing Visual Studio Code 
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+dnf check-update
+sudo dnf install code # or code-insiders
 echo Visual Studio Code installed
 
 echo Installing Google Chrome Browser from Flathub
@@ -69,6 +78,12 @@ echo Installing Discord from Flathub
 flatpak install flathub com.discordapp.Discord -y
 echo Discord installed
 
+echo Installing Bottles
+flatpak install flathub com.usebottles.bottles -y
+echo Bottles installed
+
+# curl https://desktop.line-scdn.net/win/new/LineInst.exe
+
 echo Installing VLC Player
 sudo dnf install vlc -y
 echo VLC Player installed
@@ -76,6 +91,50 @@ echo VLC Player installed
 echo Installing Helix Editor
 sudo dnf install helix -y
 echo Helix Editor installed
+
+# echo Installing Pandoc
+# sudo dnf install pandoc -y
+# echo Pandoc installed
+
+echo Installing Typst (Used for Pandoc)
+cargo install typst --locked
+echo Typst COMPILER installed
+
+echo Installing NMap
+sudo dnf install nmap -y
+echo NMap installed
+
+# echo Installing Kismet
+# dnfins kismet
+# echo Kismet installed
+
+# echo Installing AirCrack
+# sudo dnf install aircrack-ng -y
+# echo AirCrack installed
+
+echo Installing WireShark
+sudo dnf install wireshark -y
+echo WireShark installed
+
+echo Installing golang
+sudo rm -rf /usr/local/go
+sudo dnf install golang -y
+echo golang installed
+
+echo Installing LazyGit
+go install github.com/jesseduffield/lazygit@latest
+echo LazyGit installed
+
+#THIS APP IS A FUCKING SCAM
+# echo Installing BetterCap
+# sudo dnf install -y pkg-config libpcap-devel libnetfilter_queue
+# If it doesn't work, install `libusb` 
+# go install github.com/bettercap/bettercap/v2@master
+# echo BetterCap installed
+
+echo Installing FreeCAD
+sudo dnf install freecad -y
+echo FreeCAD installed 
 
 #echo Installing OBS Studio from Flathub
 #flatpak install flathub com.obsproject.Studio -y
