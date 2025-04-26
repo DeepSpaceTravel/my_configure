@@ -2,5 +2,5 @@
 #
 cargo install starship
 cargo install zoxide
-cargo install nu
-cargo install typst-cli
+cargo install nu --locked
+cargo install typst-cli --locked

@@ -1,7 +1,7 @@
 # env.nu
 #
 # Installed by:
-# version = "0.102.0"
+# version = "0.103.0"
 #
 # Previously, environment variables were typically configured in `env.nu`.
 # In general, most configuration can and should be performed in `config.nu`
@@ -17,6 +17,7 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
+$env.path ++= ["~/.local/bin"]
 oh-my-posh init nu --config "https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/tokyo.omp.json"
 
 zoxide init nushell | save -f ~/.zoxide.nu

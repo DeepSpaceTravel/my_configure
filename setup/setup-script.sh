@@ -1,7 +1,7 @@
-# !/bin/sh
+#!/bin/sh
 echo USE SUDO
 
-source ./alias.sh
+#source ./alias.sh
 
 echo \--Update dnf repo--
 sudo dnf update --refresh -y
@@ -20,11 +20,11 @@ sudo dnf install cmake -y
 echo cmake installed
 
 echo Installing Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo Rust installed
 
 echo Installing openssl-devel
-sudo dnf install opensll-devel -y
+sudo dnf install openssl-devel -y
 echo openssl-devel installed
 
 echo Installing Ansible
@@ -35,13 +35,18 @@ echo Add Flatpak Remote
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 echo Flatpak remote added
 
-echo Installing Starship
-cargo install starship --locked
-echo Starship installed
+# echo Installing Starship
+# cargo install starship --locked
+# echo Starship installed
 
 echo Installing Fish Shell
 dnf install fish -y
 echo Fish installed
+
+echo Installing Oh-My-Posh
+export PATH=$PATH:/home/jellyfish/.local/bin
+curl -s https://ohmyposh.dev/install.sh | bash -s
+echo Oh-My-Posh installed
 
 echo Installing Git
 sudo dnf install git -y
@@ -63,7 +68,7 @@ echo Installing Visual Studio Code
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 dnf check-update
-sudo dnf install code # or code-insiders
+sudo dnf install code -y# or code-insiders
 echo Visual Studio Code installed
 
 echo Installing Google Chrome Browser from Flathub
@@ -96,9 +101,9 @@ echo Helix Editor installed
 # sudo dnf install pandoc -y
 # echo Pandoc installed
 
-echo Installing Typst (Used for Pandoc)
-cargo install typst --locked
-echo Typst COMPILER installed
+# echo Installing Typst (Used for Pandoc)
+# cargo install typst --locked
+# echo Typst COMPILER installed
 
 echo Installing NMap
 sudo dnf install nmap -y
@@ -112,18 +117,18 @@ echo NMap installed
 # sudo dnf install aircrack-ng -y
 # echo AirCrack installed
 
-echo Installing WireShark
-sudo dnf install wireshark -y
-echo WireShark installed
+#echo Installing WireShark
+#sudo dnf install wireshark -y
+#echo WireShark installed
 
-echo Installing golang
-sudo rm -rf /usr/local/go
-sudo dnf install golang -y
-echo golang installed
+#echo Installing golang
+#sudo rm -rf /usr/local/go
+#sudo dnf install golang -y
+#echo golang installed
 
-echo Installing LazyGit
-go install github.com/jesseduffield/lazygit@latest
-echo LazyGit installed
+#echo Installing LazyGit
+#go install github.com/jesseduffield/lazygit@latest
+#echo LazyGit installed
 
 #THIS APP IS A FUCKING SCAM
 # echo Installing BetterCap
