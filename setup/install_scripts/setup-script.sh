@@ -20,7 +20,7 @@ sudo dnf install cmake -y
 echo cmake installed
 
 echo Installing Rust
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 echo Rust installed
 
 echo Installing openssl-devel
@@ -42,6 +42,10 @@ echo Flatpak remote added
 echo Installing Fish Shell
 dnf install fish -y
 echo Fish installed
+
+echo Installing Snapper
+sudo dnf install snapper -y
+echo Snapper installed
 
 echo Installing Oh-My-Posh
 export PATH=$PATH:/home/jellyfish/.local/bin
@@ -137,9 +141,9 @@ echo NMap installed
 # go install github.com/bettercap/bettercap/v2@master
 # echo BetterCap installed
 
-echo Installing FreeCAD
-sudo dnf install freecad -y
-echo FreeCAD installed 
+# echo Installing FreeCAD
+# sudo dnf install freecad -y
+# echo FreeCAD installed 
 
 #echo Installing OBS Studio from Flathub
 #flatpak install flathub com.obsproject.Studio -y

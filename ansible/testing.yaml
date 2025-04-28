@@ -1,0 +1,11 @@
+---
+- name: Tesing script setup
+  hosts: localhost
+  become: true
+  become_method: sudo
+  tasks:
+
+    - name: Check if Rust is installed
+      command: rustc --version
+      register: rustc_check
+      ignore_errors: yes
