@@ -31,6 +31,10 @@ echo Installing Ansible
 sudo dnf install ansible -y
 echo Ansible installed
 
+echo Installing Ansible-lint
+sudo dnf install ansible-lint -y
+echo Ansible-lint installed
+
 echo Add Flatpak Remote
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 echo Flatpak remote added
@@ -46,6 +50,10 @@ echo Fish installed
 echo Installing Snapper
 sudo dnf install snapper -y
 echo Snapper installed
+
+echo Installing Ripgrep
+sudo dnf install ripgrep -y
+echo Ripgrep installed
 
 echo Installing Oh-My-Posh
 export PATH=$PATH:/home/jellyfish/.local/bin

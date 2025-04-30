@@ -2,7 +2,7 @@
 
 EMAIL=""
 
-git config --global user.name "Deep Space Travel"
+git config --global user.name "DeepSpaceTravel"
 git config --global user.email $EMAIL
 
 # Set up SSH keys
