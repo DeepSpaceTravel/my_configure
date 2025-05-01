@@ -27,13 +27,13 @@ echo Installing openssl-devel
 sudo dnf install openssl-devel -y
 echo openssl-devel installed
 
-echo Installing Ansible
-sudo dnf install ansible -y
-echo Ansible installed
+# echo Installing Ansible
+# sudo dnf install ansible -y
+# echo Ansible installed
 
-echo Installing Ansible-lint
-sudo dnf install ansible-lint -y
-echo Ansible-lint installed
+# echo Installing Ansible-lint
+# sudo dnf install ansible-lint -y
+# echo Ansible-lint installed
 
 echo Add Flatpak Remote
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -120,6 +120,10 @@ echo Helix Editor installed
 echo Installing NMap
 sudo dnf install nmap -y
 echo NMap installed
+
+echo Installing Btop
+sudo dnf install btop -y
+echo Btop installed
 
 # echo Installing Kismet
 # dnfins kismet
