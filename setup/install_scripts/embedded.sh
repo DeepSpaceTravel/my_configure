@@ -19,7 +19,10 @@ sudo udevadm trigger
 # Convert elf to uf2
 # This is necessary to convert the elf file to uf2 format
 # This is necessary to flash the firmware to the Raspberry Pi Pico
+
+# This is needed or else elf2uf2 won't build.
+# sudo dnf install rust-libudev-devel -y
 # cargo install elf2uf2-rs
 
 rustup component add llvm-tools
-cargo isntall cargo-binutils
+cargo install cargo-binutils
