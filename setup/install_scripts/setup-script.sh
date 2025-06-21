@@ -83,13 +83,13 @@ dnf check-update
 sudo dnf install code -y# or code-insiders
 echo Visual Studio Code installed
 
-echo Installing Chromium
-sudo dnf install chromium -y
-echo Chromium installed
+# echo Installing Chromium
+# sudo dnf install chromium -y
+# echo Chromium installed
 
-# echo Installing Google Chrome Browser from Flathub
-# flatpak install flathub com.google.Chrome -y
-# echo Google Chrome Browser installed
+echo Installing Google Chrome Browser from Flathub
+flatpak install flathub com.google.Chrome -y
+echo Google Chrome Browser installed
 
 echo Installing Brave Browser from Flathub
 flatpak install flathub com.brave.Browser -y
