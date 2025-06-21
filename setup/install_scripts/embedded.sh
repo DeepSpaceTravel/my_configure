@@ -16,13 +16,16 @@ mv 69-probe-rs.rules /etc/udev/rules.d/69-probe-rs.rules
 sudo udevadm control --reload
 sudo udevadm trigger
 
+# Install flip-link for better memory layout
+cargo install flip-link
+
 # Convert elf to uf2
 # This is necessary to convert the elf file to uf2 format
 # This is necessary to flash the firmware to the Raspberry Pi Pico
 
 # This is needed or else elf2uf2 won't build.
 # sudo dnf install rust-libudev-devel -y
-# cargo install elf2uf2-rs
+cargo install elf2uf2-rs
 
 rustup component add llvm-tools
 cargo install cargo-binutils

@@ -83,9 +83,13 @@ dnf check-update
 sudo dnf install code -y# or code-insiders
 echo Visual Studio Code installed
 
-echo Installing Google Chrome Browser from Flathub
-flatpak install flathub com.google.Chrome -y
-echo Google Chrome Browser installed
+echo Installing Chromium
+sudo dnf install chromium -y
+echo Chromium installed
+
+# echo Installing Google Chrome Browser from Flathub
+# flatpak install flathub com.google.Chrome -y
+# echo Google Chrome Browser installed
 
 echo Installing Brave Browser from Flathub
 flatpak install flathub com.brave.Browser -y
@@ -108,6 +112,10 @@ echo VLC Player installed
 echo Installing Helix Editor
 sudo dnf install helix -y
 echo Helix Editor installed
+
+echo Installing GIMP
+sudo dnf install gimp -y
+echo GIMP installed
 
 # echo Installing Pandoc
 # sudo dnf install pandoc -y
